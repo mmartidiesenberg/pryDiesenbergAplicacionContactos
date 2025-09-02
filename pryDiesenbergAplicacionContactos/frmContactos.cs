@@ -41,5 +41,10 @@ namespace pryDiesenbergAplicacionContactos
         {
             MessageBox.Show("Contacto Agregado");
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
