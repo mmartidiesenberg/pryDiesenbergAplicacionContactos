@@ -193,7 +193,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(152, 29);
             this.txtNumero.TabIndex = 13;
-            this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
+   
             // 
             // textBox4
             // 
