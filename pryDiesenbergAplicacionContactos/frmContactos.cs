@@ -46,5 +46,21 @@ namespace pryDiesenbergAplicacionContactos
         {
 
         }
+
+      
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back))
+            {
+                //lblNumero.Text = "soy un numero";
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                //lblNumero.Text = "otra cosa...";
+            }
+            }
+        }
     }
-}
+
