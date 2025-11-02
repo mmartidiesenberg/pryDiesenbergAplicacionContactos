@@ -16,7 +16,17 @@ namespace pryDiesenbergAplicacionContactos
         {
             InitializeComponent();
         }
+        int Indice = 0;
 
+        struct Contacto
+        {
+            public string Nombre;
+            public string Apellido;
+            public string Numero;
+            public string Correo;
+            public string Categoria;
+        }
+        Contacto[] vecContactos = new Contacto[100];
         private void lblNombre_Click(object sender, EventArgs e)
         {
 
@@ -29,17 +39,29 @@ namespace pryDiesenbergAplicacionContactos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Contacto Eliminado");
+            MessageBox.Show("Contacto Eliminado Exitosamente");    
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Contacto Editado");
-        }
+      
+
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Contacto Agregado");
+            if (txtNombre.Text == "" || txtApellido.Text == "" || mskNumero.Text == "" || txtCorreo.Text == "" || lstCategoría.Text == "")
+            {
+                MessageBox.Show("Datos Incompletos");
+            }
+               
+            else
+            {
+                vecContactos[Indice].Nombre = txtNombre.Text;
+                vecContactos[Indice].Apellido = txtApellido.Text;
+                vecContactos[Indice].Numero = mskNumero.Text;
+                vecContactos[Indice].Correo = txtCorreo.Text;
+                vecContactos[Indice].Categoria = lstCategoría.Text;
+                Indice++;
+                MessageBox.Show("Contacto Agregado Exitosamente");
+            }
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -61,6 +83,11 @@ namespace pryDiesenbergAplicacionContactos
                 //lblNumero.Text = "otra cosa...";
             }
             }
+
+        private void frmContactos_Load(object sender, EventArgs e)
+        {
+
         }
+    }
     }
 
